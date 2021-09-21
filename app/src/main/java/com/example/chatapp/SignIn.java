@@ -131,9 +131,9 @@ public class SignIn extends AppCompatActivity {
                             FirebaseUser user = auth.getCurrentUser();
                             Users users = new Users();
                             users.setUserId(user.getUid());
-                            users.setUsename(user.getDisplayName());
+                            users.setUsername(user.getDisplayName());
                             users.setProfilepic(user.getPhotoUrl().toString());
-                            database.getReference().child("Users").child(user.getUid()).setValue(users);
+                            database.getReference().child("Users").child(user.getUid()).setValue(user);
                             //updateUI(user);
                             Intent intent = new Intent(SignIn.this,MainActivity.class);
                             startActivity(intent);
