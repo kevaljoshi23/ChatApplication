@@ -42,13 +42,19 @@ public class MainActivity extends AppCompatActivity {
         switch(item.getItemId())
         {
             case R.id.settings:
-                Toast.makeText(this, "Settings Clicked", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(MainActivity.this , SettingsActivity.class);
+                startActivity(i);
                 break;
             case R.id.logout:
                 auth.signOut();
                 Intent intent = new Intent(MainActivity.this,SignIn.class);
                 startActivity(intent);
                 break;
+            case R.id.groupChat:
+                Intent intentt = new Intent(MainActivity.this,GroupChatActivity.class);
+                startActivity(intentt);
+
+            break;
         }
         return true;
     }
