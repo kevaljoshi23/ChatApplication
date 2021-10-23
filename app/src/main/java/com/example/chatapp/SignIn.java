@@ -55,6 +55,20 @@ public class SignIn extends AppCompatActivity {
         binding.btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(binding.editTextTextEmailAddress.getText().toString().isEmpty()){
+                    binding.editTextTextEmailAddress.setError("Enter your Email");
+                    return;
+                }
+
+                if(binding.editTextTextPassword.getText().toString().isEmpty()){
+                    binding.editTextTextPassword.setError("Enter your Password");
+                    return;
+                }
+
+
+
+
+
                 progressDialog.show();
                 auth.signInWithEmailAndPassword(binding.editTextTextEmailAddress.getText().toString(), binding.editTextTextPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
